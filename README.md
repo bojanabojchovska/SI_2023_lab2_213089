@@ -1,6 +1,7 @@
 # Бојана Бојчовска 213089
 
-![dijagram drawio](https://github.com/bojanabojchovska/SI_2023_lab2_213089/assets/126956163/c610ae01-3434-4f13-a548-580022e4986a)
+
+![dijagram drawio](https://github.com/bojanabojchovska/SI_2023_lab2_213089/assets/126956163/3db94830-c202-4808-81bb-cd6a2058aed3)
 
 
 Цикломатската комплексност е видлива од самиот Control Flow Graph, каде имаме 10 региони и +1 за целиот граф добиваме 11;
@@ -19,5 +20,6 @@ za if (user==null || user.getPassword()==null || user.getEmail()==null) imame 4 
 2. user ne e null, ama passwordot e null            F T
 3. user i password ne se null ama emailot e         F F T
 4. nitu eden ne e null                              F F F 
-![everyBranch](https://github.com/bojanabojchovska/SI_2023_lab2_213089/assets/126956163/559f901e-0be6-4ecc-9f55-d998fd6d1dfe)
+
+![everyBranch](https://github.com/bojanabojchovska/SI_2023_lab2_213089/assets/126956163/cd1f0d0a-70ac-453b-adba-ffe25b3ac95a)
 
