@@ -28,51 +28,50 @@ class User {
     public String getEmail() {
         return email;
     }
-
 }
 
 public class SILab2 {
 
     public static boolean function (User user, List<User> allUsers) {
-        if (user==null || user.getPassword()==null || user.getEmail()==null){//1
-            throw new RuntimeException("Mandatory information missing!");//2
+        if (user==null || user.getPassword()==null || user.getEmail()==null){
+            throw new RuntimeException("Mandatory information missing!");
         }
 
-        if (user.getUsername()==null){//3
-            user.setUsername(user.getEmail());//4
+        if (user.getUsername()==null){
+            user.setUsername(user.getEmail());
         }
 
-        int same = 1;//5
-        if (user.getEmail().contains("@") && user.getEmail().contains(".")) {//6
+        int same = 1;
+        if (user.getEmail().contains("@") && user.getEmail().contains(".")) {
             same = 0;
-            for (int i=0;i<allUsers.size();i++) {//7.1 //7.2 //7.3
+            for (int i=0;i<allUsers.size();i++) {
                 User existingUser = allUsers.get(i);
-                if (existingUser.getEmail() == user.getEmail()) {//8
-                    same += 1;//9
+                if (existingUser.getEmail() == user.getEmail()) {
+                    same += 1;
                 }
-                if (existingUser.getUsername() == user.getUsername()) {//10
-                    same += 1;//11
+                if (existingUser.getUsername() == user.getUsername()) {
+                    same += 1;
                 }
-            }//12
+            }
         }
 
         String specialCharacters="!#$%&'()*+,-./:;<=>?@[]^_`{|}";
         String password = user.getPassword();
         String passwordLower = password.toLowerCase();
 
-        if (passwordLower.contains(user.getUsername().toLowerCase()) || password.length()<8) {//13
-            return false;//14
+        if (passwordLower.contains(user.getUsername().toLowerCase()) || password.length()<8) {
+            return false;
         }
         else {
-            if (!passwordLower.contains(" ")) {//15
-                for (int i = 0; i < specialCharacters.length(); i++) {//16.1 16.2 16.3
-                    if (password.contains(String.valueOf(specialCharacters.charAt(i)))) {//17
-                        return same == 0;//18
+            if (!passwordLower.contains(" ")) {
+                for (int i = 0; i < specialCharacters.length(); i++) {
+                    if (password.contains(String.valueOf(specialCharacters.charAt(i)))) {
+                        return same == 0;
                     }
-                }//19
+                }
             }
         }
-        return false;//20
-    }//21
+        return false;
+    }
 
 }
